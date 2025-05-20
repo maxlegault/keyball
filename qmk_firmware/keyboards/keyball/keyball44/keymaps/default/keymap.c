@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
   [LAYER_DEFAULT] = LAYOUT_universal(
     KC_TAB   , KC_Q     , KC_W     , KC_F     , KC_P     , KC_B     ,                                        KC_J     , KC_L     , KC_U     , KC_Y     , KC_SCLN  , KC_MINUS ,
-    QK_GESC  , HOME_A   , HOME_R   , HOME_S   , HOME_T   , KC_G     ,                                        KC_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , KC_QUOTE ,
+    KC_ESC   , HOME_A   , HOME_R   , HOME_S   , HOME_T   , KC_G     ,                                        KC_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , KC_QUOTE ,
     TO_TYP   , KC_Z     , KC_X     , KC_C     , KC_D     , KC_V     ,                                        KC_K     , KC_H     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BSLS  ,
                KC_BTN2  , KC_BTN1  , LT_CAPS  , LT_BSPC  , LT_DEL   ,                                        LT_ENT   , LT_SPC   , KC_NO    , KC_NO    , DB_TOGG
   ),
