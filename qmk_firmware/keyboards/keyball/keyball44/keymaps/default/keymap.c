@@ -48,7 +48,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_BSPC LT(LAYER_NAVIGATION,KC_BSPC)
 #define LT_ENT LT(LAYER_ACCENTS,KC_ENT)
 #define LT_DEL LT(LAYER_NUMBER,KC_DEL)
-#define LT_CAPW LT(LAYER_FUNCTION,QK_CAPS_WORD_TOGGLE)
+#define LT_CAPS LT(LAYER_FUNCTION,KC_CAPS)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB   , KC_Q     , KC_W     , KC_F     , KC_P     , KC_B     ,                                        KC_J     , KC_L     , KC_U     , KC_Y     , KC_SCLN  , KC_MINUS ,
     QK_GESC  , HOME_A   , HOME_R   , HOME_S   , HOME_T   , KC_G     ,                                        KC_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , KC_QUOTE ,
     TO_TYP   , KC_Z     , KC_X     , KC_C     , KC_D     , KC_V     ,                                        KC_K     , KC_H     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BSLS  ,
-               KC_BTN2  , KC_BTN1  , LT_CAPW  , LT_BSPC  , LT_DEL   ,                                        LT_ENT   , LT_SPC   , KC_NO    , KC_NO    , DB_TOGG
+               KC_BTN3  , KC_BTN1  , LT_CAPS  , LT_BSPC  , LT_DEL   ,                                        LT_ENT   , LT_SPC   , KC_NO    , KC_NO    , DB_TOGG
   ),
 
   [LAYER_NAVIGATION] = LAYOUT_universal(
