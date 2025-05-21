@@ -53,8 +53,96 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LT_SPC LT(LAYER_SYMBOL,KC_SPC)
 #define LT_BSPC LT(LAYER_NAVIGATION,KC_BSPC)
 #define LT_ENT LT(LAYER_ACCENTS,KC_ENT)
-#define LT_DEL LT(LAYER_NUMBER,KC_DEL)
-#define LT_CAPS LT(LAYER_FUNCTION,KC_CAPS)
+#define LT_DEL LT(LAYER_FUNCTION,KC_DEL)
+#define LT_BTN1 LT(LAYER_NUMBER,KC_BTN1)
+
+// Accents
+enum unicode_names {
+  ACIRC_L,
+  ACIRC_U,
+  AELIG_L,
+  AELIG_U,
+  AGRAVE_L,
+  AGRAVE_U,
+  CCEDIL_L,
+  CCEDIL_U,
+  EACUTE_L,
+  EACUTE_U,
+  ECIRC_L,
+  ECIRC_U,
+  EGRAVE_L,
+  EGRAVE_U,
+  EUML_L,
+  EUML_U,
+  ICIRC_L,
+  ICIRC_U,
+  IUML_L,
+  IUML_U,
+  OCIRC_L,
+  OCIRC_U,
+  OELIG_L,
+  OELIG_U,
+  UCIRC_L,
+  UCIRC_U,
+  UGRAVE_L,
+  UGRAVE_U,
+  UUML_L,
+  UUML_U,
+  YUML_L,
+  YUML_U,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+  [ACIRC_L] = 0x00E2,
+  [ACIRC_U] = 0x00C2,
+  [AELIG_L] = 0x00E6,
+  [AELIG_U] = 0x00C6,
+  [AGRAVE_L] = 0x00E0,
+  [AGRAVE_U] = 0x00C0,
+  [CCEDIL_L] = 0x00E7,
+  [CCEDIL_U] = 0x00C7,
+  [EACUTE_L] = 0x00E9,
+  [EACUTE_U] = 0x00C9,
+  [ECIRC_L] = 0x00EA,
+  [ECIRC_U] = 0x00CA,
+  [EGRAVE_L] = 0x00E8,
+  [EGRAVE_U] = 0x00C8,
+  [EUML_L] = 0x00EB,
+  [EUML_U] = 0x00CB,
+  [ICIRC_L] = 0x00EE,
+  [ICIRC_U] = 0x00CE,
+  [IUML_L] = 0x00EF,
+  [IUML_U] = 0x00CF,
+  [OCIRC_L] = 0x00F4,
+  [OCIRC_U] = 0x00D4,
+  [OELIG_L] = 0x0153,
+  [OELIG_U] = 0x0152,
+  [UCIRC_L] = 0x00FB,
+  [UCIRC_U] = 0x00DB,
+  [UGRAVE_L] = 0x00F9,
+  [UGRAVE_U] = 0x00D9,
+  [UUML_L] = 0x00FC,
+  [UUML_U] = 0x00DC,
+  [YUML_L] = 0x00FF,
+  [YUML_U] = 0x0178,
+};
+
+#define ACIRC UP(ACIRC_L,ACIRC_U)
+#define AELIG UP(AELIG_L,AELIG_U)
+#define AGRAVE UP(AGRAVE_L,AGRAVE_U)
+#define CCEDIL UP(CCEDIL_L,CCEDIL_U)
+#define EACUTE UP(EACUTE_L,EACUTE_U)
+#define ECIRC UP(ECIRC_L,ECIRC_U)
+#define EGRAVE UP(EGRAVE_L,EGRAVE_U)
+#define EUML UP(EUML_L,EUML_U)
+#define ICIRC UP(ICIRC_L,ICIRC_U)
+#define IUML UP(IUML_L,IUML_U)
+#define OCIRC UP(OCIRC_L,OCIRC_U)
+#define OELIG UP(OELIG_L,OELIG_U)
+#define UCIRC UP(UCIRC_L,UCIRC_U)
+#define UGRAVE UP(UGRAVE_L,UGRAVE_U)
+#define UUML UP(UUML_L,UUML_U)
+#define YUML UP(YUML_L,YUML_U)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -63,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB   , KC_Q     , KC_W     , KC_F     , KC_P     , KC_B     ,                                        KC_J     , KC_L     , KC_U     , KC_Y     , KC_SCLN  , KC_MINUS ,
     KC_ESC   , HOME_A   , HOME_R   , HOME_S   , HOME_T   , KC_G     ,                                        KC_M     , HOME_N   , HOME_E   , HOME_I   , HOME_O   , KC_QUOTE ,
     TO_TYP   , KC_Z     , KC_X     , KC_C     , KC_D     , KC_V     ,                                        KC_K     , KC_H     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BSLS  ,
-               KC_BTN2  , KC_BTN1  , LT_CAPS  , LT_BSPC  , LT_DEL   ,                                        LT_ENT   , LT_SPC   , KC_NO    , KC_NO    , DB_TOGG
+               KC_BTN2  , CW_TOGG  , LT_BTN1  , LT_BSPC  , LT_DEL   ,                                        LT_ENT   , LT_SPC   , KC_NO    , KC_NO    , UC_NEXT
   ),
 
   [LAYER_NAVIGATION] = LAYOUT_universal(
@@ -95,9 +183,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [LAYER_ACCENTS] = LAYOUT_universal(
-    _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
+    _______  ,  ICIRC   , ACIRC    , ICIRC   , AGRAVE  , AELIG    ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
+    YUML     ,  EUML    , ECIRC    , EACUTE  , EGRAVE  , CCEDIL   ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
+    _______  ,  UUML    , UCIRC    , OCIRC   , UGRAVE  , OELIG    ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
                 _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______
   ),
 
