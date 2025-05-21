@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_S LCTL_T(KC_S)
 #define HOME_T LSFT_T(KC_T)
 #define HOME_LFT LALT_T(KC_LEFT)
-#define HOME_UP LCTL_T(KC_UP)
+#define HOME_DWN LCTL_T(KC_DOWN)
 #define HOME_RGT LSFT_T(KC_RGHT)
 
 // Right-hand home row mods
@@ -156,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_NAVIGATION] = LAYOUT_universal(
     _______  ,  _______ , _______  , KC_UP   , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT , _______  ,                                         KC_H     , KC_J     , KC_K     , KC_L     , _______  , _______  ,
+    _______  ,  _______ , HOME_LFT , HOME_DWN, HOME_RGT, _______  ,                                         KC_H     , HOME_J   , HOME_K   , HOME_L   , _______  , _______  ,
     _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
                 _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______
   ),
