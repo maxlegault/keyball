@@ -34,12 +34,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_R LALT_T(KC_R)
 #define HOME_S LCTL_T(KC_S)
 #define HOME_T LSFT_T(KC_T)
+#define HOME_LFT LALT_T(KC_LEFT)
+#define HOME_UP LCTL_T(KC_UP)
+#define HOME_RGT LSFT_T(KC_RGHT)
 
 // Right-hand home row mods
 #define HOME_N RSFT_T(KC_N)
 #define HOME_E RCTL_T(KC_E)
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
+#define HOME_J RSFT_T(KC_J)
+#define HOME_K RCTL_T(KC_K)
+#define HOME_L LALT_T(KC_L)
 
 // Layer mods
 #define TO_TYP TO(LAYER_TYPING)
@@ -62,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_NAVIGATION] = LAYOUT_universal(
     _______  ,  _______ , _______  , KC_UP   , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
-    _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT , _______  ,                                         KC_H     , KC_J     , KC_K     , KC_L     , _______  , _______  ,
+    _______  ,  _______ , HOME_LFT , HOME_UP , HOME_RGT, _______  ,                                         KC_H     , HOME_J   , HOME_K   , HOME_L   , _______  , _______  ,
     _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
                 _______ , _______  , _______ , _______ , _______  ,                                         _______  , _______  , _______  , _______  , _______
   ),
