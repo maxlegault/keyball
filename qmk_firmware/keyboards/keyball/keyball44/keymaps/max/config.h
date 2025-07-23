@@ -41,3 +41,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_LINUX
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 7
