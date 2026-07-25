@@ -1,6 +1,6 @@
 RGBLIGHT_ENABLE = no
 
-OLED_ENABLE = yes
+OLED_ENABLE = no
 
 CAPS_WORD_ENABLE = yes
 
